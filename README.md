@@ -1,50 +1,60 @@
-# Welcome to your Expo app 👋
+# Movie List App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to **Movie List**, a mobile application built with **Expo** and **React Native**. This project allows users to browse, search, and interact with a collection of movies. It features smooth animations, a modern UI, and the ability to mark favorite movies.
 
-## Get started
+## Features
 
-1. Install dependencies
+- 🎬 **Browse Movies**: View a list of movies with details like title, genre, release year, and rating.
+- 🌙 **Dark Mode Support**: The UI adapts based on user preference.
+- ⭐ **Favorites Management**: Mark and unmark movies as favorites.
+- 🔄 **Smooth Animations**: Utilizes `react-native-reanimated` for a better user experience.
+- 📌 **Navigation**: Uses `expo-router` for a seamless navigation experience.
+
+## Tech Stack
+
+- **Framework**: [Expo](https://expo.dev) (React Native)
+- **State Management**: Redux Toolkit
+- **Navigation**: Expo Router
+- **Animations**: React Native Reanimated
+- **Testing**: Jest & React Testing Library
+
+## Installation & Setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/maulanakbr/maulana-akbar-fe-technical-test.git
+   cd maulana-akbar-fe-technical-test
+   ```
+
+2. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Start the app:
 
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+   You can open the app on:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   - An **Android emulator** (via Android Studio)
+   - An **iOS simulator** (via Xcode)
+   - **Expo Go** (for quick testing on mobile devices)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Running Tests
 
-## Get a fresh project
+This project uses **Vitest** and `@testing-library/react-native` for unit testing.
 
-When you're ready, run:
+Run tests with:
 
 ```bash
-npm run reset-project
+npm test
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## License
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is licensed under the **MIT License**.

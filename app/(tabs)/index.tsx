@@ -1,74 +1,76 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { useState, useEffect } from 'react';
+import { View, Text, FlatList, StyleSheet, TextInput, Switch } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import type { AppDispatch, RootState } from '@/store/index';
+import { fetchMovies, toggleFavorite } from '@/store/slices/movies-slice';
+import { toggleTheme } from '@/store/slices/theme-slice';
+import MovieCard from '@/components/movie-card';
 
 export default function HomeScreen() {
+  const dispatch = useDispatch<AppDispatch>();
+  const movies = useSelector((state: RootState) => state.movies.movies);
+  const favorites = useSelector((state: RootState) => state.movies.favorites);
+  const darkMode = useSelector((state: RootState) => state.theme.darkMode);
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredMovies, setFilteredMovies] = useState(movies);
+
+  useEffect(() => {
+    dispatch(fetchMovies());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setFilteredMovies(movies.filter((movie) => movie.title.toLowerCase().includes(searchQuery.toLowerCase())));
+  }, [searchQuery, movies]);
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
+    <View style={[styles.container, darkMode && styles.darkContainer]}>
+      <Text style={[styles.title, darkMode && styles.darkTitle]}>Movie List</Text>
+      <TextInput
+        style={[styles.searchInput, darkMode && styles.darkSearchInput]}
+        placeholder="Search movies..."
+        placeholderTextColor={darkMode ? '#888' : '#AAA'}
+        value={searchQuery}
+        onChangeText={setSearchQuery}
+      />
+      <FlatList
+        data={filteredMovies}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => {
+          const isFavorite = favorites.includes(item.id);
+
+          return (
+            <MovieCard
+              item={item}
+              darkMode={darkMode}
+              isFavorite={isFavorite}
+              handleToggle={() => dispatch(toggleFavorite(item.id))}
+            />
+          );
+        }}
+        ListEmptyComponent={<Text style={[styles.noResults, darkMode && styles.darkNoResults]}>No movies found</Text>}
+      />
+      <View style={styles.toggleContainer}>
+        <Text style={[styles.toggleLabel, darkMode && styles.darkToggleLabel]}>Dark Mode</Text>
+        <Switch
+          value={darkMode}
+          onValueChange={() => dispatch(toggleTheme())}
         />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+      </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
+  container: { flex: 1, backgroundColor: '#FFF', padding: 16 },
+  darkContainer: { backgroundColor: '#121212' },
+  title: { fontSize: 24, fontWeight: 'bold', color: '#000', marginBottom: 16 },
+  darkTitle: { color: '#FFF' },
+  searchInput: { backgroundColor: '#F0F0F0', color: '#000', padding: 10, borderRadius: 8, fontSize: 16, marginBottom: 16 },
+  darkSearchInput: { backgroundColor: '#1E1E1E', color: '#FFF' },
+  noResults: { fontSize: 16, color: '#000', textAlign: 'center', marginTop: 20 },
+  darkNoResults: { color: '#AAA' },
+  toggleContainer: { flexDirection: 'row', alignItems: 'center', marginTop: 16 },
+  toggleLabel: { fontSize: 18, color: '#000', marginRight: 8 },
+  darkToggleLabel: { color: '#FFF' },
 });

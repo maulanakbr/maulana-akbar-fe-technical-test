@@ -1,0 +1,214 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Psycho",
+      "description": "A secretary embezzles money and checks into a remote motel run by a disturbed man.",
+      "releaseYear": 1960,
+      "genre": "Horror",
+      "rating": 8.5,
+      "isFavorite": false,
+      "imageUrl": "/81d8oyEFgj7FlxJqSDXWr8JH8kV.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Vertigo",
+      "description": "A retired detective suffering from acrophobia investigates a mysterious woman.",
+      "releaseYear": 1958,
+      "genre": "Mystery",
+      "rating": 8.3,
+      "isFavorite": false,
+      "imageUrl": "/upaqpNXCRvJHEKNfyU9hD5xhpZg.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Rear Window",
+      "description": "A wheelchair-bound photographer spies on his neighbors and suspects a murder.",
+      "releaseYear": 1954,
+      "genre": "Thriller",
+      "rating": 8.5,
+      "isFavorite": false,
+      "imageUrl": "/qitnZcLP7C9DLRuPpmvZ7GiEjJN.jpg"
+    },
+    {
+      "id": 4,
+      "title": "North by Northwest",
+      "description": "A man is mistaken for a spy and pursued across the country.",
+      "releaseYear": 1959,
+      "genre": "Adventure",
+      "rating": 8.3,
+      "isFavorite": false,
+      "imageUrl": "/8MD77eyPL0bVl6YX23vYt2oU8Gh.jpg"
+    },
+    {
+      "id": 5,
+      "title": "The Birds",
+      "description": "A wealthy socialite finds herself in a small town where birds start attacking people.",
+      "releaseYear": 1963,
+      "genre": "Horror",
+      "rating": 7.6,
+      "isFavorite": false,
+      "imageUrl": "/7uEXm1bk0r4pU5O8kH88hVah7s8.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Strangers on a Train",
+      "description": "Two men meet on a train and discuss swapping murders to avoid detection.",
+      "releaseYear": 1951,
+      "genre": "Crime",
+      "rating": 8.0,
+      "isFavorite": false,
+      "imageUrl": "/s9zOOhmC5w1OoiPAK2bOyyzzgNt.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Rope",
+      "description": "Two men commit murder and host a party with the body hidden in the room.",
+      "releaseYear": 1948,
+      "genre": "Thriller",
+      "rating": 8.0,
+      "isFavorite": false,
+      "imageUrl": "/yFxD2WP0jsWZrTo4nAvIX6AzLzd.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Shadow of a Doubt",
+      "description": "A young woman suspects her charming uncle may be a murderer.",
+      "releaseYear": 1943,
+      "genre": "Mystery",
+      "rating": 7.9,
+      "isFavorite": false,
+      "imageUrl": "/1s1bdQslS3Ays2Ufg49VEVJOtBu.jpg"
+    },
+    {
+      "id": 9,
+      "title": "The 39 Steps",
+      "description": "A man is wrongly accused of murder and must uncover a spy ring to clear his name.",
+      "releaseYear": 1935,
+      "genre": "Adventure",
+      "rating": 7.7,
+      "isFavorite": false,
+      "imageUrl": "/tQtGM0acMyl7j9jC7krNE2cbG1S.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Rebecca",
+      "description": "A newlywed woman is haunted by her husband's first wife in a mysterious mansion.",
+      "releaseYear": 1940,
+      "genre": "Drama",
+      "rating": 8.1,
+      "isFavorite": false,
+      "imageUrl": "/e4c3sA8Z9AvAtM8PfLUjU5ij9sx.jpg"
+    },
+    {
+      "id": 11,
+      "title": "The Shining",
+      "description": "A writer and his family stay at an isolated hotel where supernatural forces drive him insane.",
+      "releaseYear": 1980,
+      "genre": "Horror",
+      "rating": 8.4,
+      "isFavorite": false,
+      "imageUrl": "/9fgh3Ns1iRzlQNYuJyK0ARQZU7w.jpg"
+    },
+    {
+      "id": 12,
+      "title": "A Clockwork Orange",
+      "description": "A violent delinquent undergoes an experimental reformation program.",
+      "releaseYear": 1971,
+      "genre": "Crime",
+      "rating": 8.3,
+      "isFavorite": false,
+      "imageUrl": "/4sHeTAp65WrSSuc05nRBKddhBxO.jpg"
+    },
+    {
+      "id": 13,
+      "title": "2001: A Space Odyssey",
+      "description": "A mysterious monolith influences human evolution as astronauts journey into deep space.",
+      "releaseYear": 1968,
+      "genre": "Sci-Fi",
+      "rating": 8.3,
+      "isFavorite": false,
+      "imageUrl": "/ve72VxNqjGM69Uky4WTo2bK6rfq.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Full Metal Jacket",
+      "description": "A look at the dehumanizing effects of the Vietnam War on young soldiers.",
+      "releaseYear": 1987,
+      "genre": "War",
+      "rating": 8.3,
+      "isFavorite": false,
+      "imageUrl": "/kMKyx1k8hWWscYFnPbnxxN4Eqo4.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Dr. Strangelove",
+      "description": "A satirical look at Cold War paranoia and nuclear brinkmanship.",
+      "releaseYear": 1964,
+      "genre": "Comedy",
+      "rating": 8.4,
+      "isFavorite": false,
+      "imageUrl": "/f1qpM0o4OQAdmH0RZ0BUIdFIhNT.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Barry Lyndon",
+      "description": "An 18th-century Irish rogue attempts to climb the social ladder through various exploits.",
+      "releaseYear": 1975,
+      "genre": "Drama",
+      "rating": 8.1,
+      "isFavorite": false,
+      "imageUrl": "/7SBsmZf0XAfqXcj5WZk1Pf1GojV.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Paths of Glory",
+      "description": "A French officer in World War I defends his men against unjust accusations.",
+      "releaseYear": 1957,
+      "genre": "War",
+      "rating": 8.4,
+      "isFavorite": false,
+      "imageUrl": "/6v9blIVy6U4Mpvp2sV3C6ilPnPX.jpg"
+    },
+    {
+      "id": 18,
+      "title": "The Killing",
+      "description": "A group of criminals plans a heist at a racetrack, but things go wrong.",
+      "releaseYear": 1956,
+      "genre": "Crime",
+      "rating": 7.9,
+      "isFavorite": false,
+      "imageUrl": "/y5mksqhtEwxmFv6hWJv3W1H7v5d.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Eyes Wide Shut",
+      "description": "A doctor embarks on a night-long odyssey after a disturbing encounter at a masquerade party.",
+      "releaseYear": 1999,
+      "genre": "Drama",
+      "rating": 7.4,
+      "isFavorite": false,
+      "imageUrl": "/jPVzLPxdkXrBaP2PbsxT5PB9J7r.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Lolita",
+      "description": "A middle-aged man becomes infatuated with a 12-year-old girl, leading to a morally ambiguous relationship.",
+      "releaseYear": 1962,
+      "genre": "Drama",
+      "rating": 7.5,
+      "isFavorite": false,
+      "imageUrl": "/89GGHkAGffmXll2eqW5FGvobfI3.jpg"
+    },
+    {
+      "id": 21,
+      "title": "The Magician",
+      "description": "A magician on a journey to discover the secrets of his craft.",
+      "releaseYear": 1958,
+      "genre": "Mystery",
+      "rating": 7.5,
+      "isFavorite": false,
+      "imageUrl": "/v3q9sv4vydHneI0A9VvBa3HwpD5.jpg"
+    }
+  ]
+}

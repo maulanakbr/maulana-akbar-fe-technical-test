@@ -5,6 +5,7 @@ import type { AppDispatch, RootState } from '@/store/index';
 import { fetchMovies, toggleFavorite } from '@/store/slices/movies-slice';
 import { toggleTheme } from '@/store/slices/theme-slice';
 import MovieCard from '@/components/movie-card';
+import NotFound from '@/components/not-found';
 
 export default function HomeScreen() {
   const dispatch = useDispatch<AppDispatch>();
@@ -48,7 +49,12 @@ export default function HomeScreen() {
             />
           );
         }}
-        ListEmptyComponent={<Text style={[styles.noResults, darkMode && styles.darkNoResults]}>No movies found</Text>}
+        ListEmptyComponent={
+          <NotFound
+            darkMode={darkMode}
+            info="No Movie Found"
+          />
+        }
       />
       <View style={styles.toggleContainer}>
         <Text style={[styles.toggleLabel, darkMode && styles.darkToggleLabel]}>Dark Mode</Text>
